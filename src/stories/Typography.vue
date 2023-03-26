@@ -3,7 +3,11 @@
     This is the lowest level of the organization. At this level I specify the font sizes, line
     heights in `rem` units. Spacing is in `px` (for now until I confirm).
 
-    <p>I chose <span class="font-sans--raleway">Raleway</span> the default text font. Currently selected font is {{ fontFamily }}</p>
+    <p>
+      I chose <span class="font-sans--raleway">Raleway</span> the default text font. I chose this
+      because it was a variable font and it had a lighter feel than the other fonts.
+      <span v-if="fontFamily">Currently selected font is {{ fontFamily }}.</span>
+    </p>
     <p>
       I use golden ratios everywhere for fun. The line height is computed such that (font-size +
       gap) == line height, font size being long side, gap being short side and line height being
@@ -12,15 +16,19 @@
 
     <p>My ideal font requirements is as follows:</p>
     <ul>
-      <li><a href="https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts">Variable font</a></li>
+      <li>
+        <a href="https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts"
+          >Variable font</a
+        >
+      </li>
       <li>sans-serif base</li>
-      <li>rounded strokes</li>
-      <li>single-storey lowercase a</li>
-      <li>single-storey lowercase g</li>
-      <li>tailed lowercase t</li>
-      <li>Serifed uppercase I</li>
-      <li>Serifed lower case l</li>
-      <li>Dotted or slashed 0</li>
+      <li>rounded strokes. Just my preference, I find it makes the font look friendlier.</li>
+      <li>single-storey lowercase a. Just my preference, I like simpler looking text.</li>
+      <li>single-storey lowercase g. Just my preference, I like simpler looking text.</li>
+      <li>tailed lowercase t. Having the tails makes the letters tie better together when you're glancing.</li>
+      <li>Serifed uppercase I.  This helps distinguish it from lower case l.</li>
+      <li>Serifed lower case l. This helps distinguish it from upper case I.</li>
+      <li>Dotted or slashed 0. This helps distinguish it from the letter O.</li>
       <li><i>Natural italics</i></li>
       <li><b>Natural bold</b></li>
     </ul>
@@ -69,7 +77,7 @@ const props = withDefaults(
       | 'source-code-pro'
       | ''
   }>(),
-  { fontFamily: 'pt-sans' }
+  { fontFamily: '' }
 )
 const classes = computed(() => ({
   ['font-sans--' + props.fontFamily]: true
