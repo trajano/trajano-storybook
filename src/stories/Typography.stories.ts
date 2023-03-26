@@ -1,38 +1,27 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
 import Typography from './Typography.vue'
 export default {
   title: 'Typography/Typography',
   component: Typography,
   argTypes: {
-    fontFamily: { type: 'string' }
-  }
+    fontFamily: {
+      type: 'string',
+      control: { type: 'select' },
+      options: ['pt-sans', 'lexend', 'ibm-plex-sans', 'lato', 'roboto']
+    }
+  },
+  tags: ['autodocs']
+  // render: (args) => ({
+  //   components: { Typography },
+  //   setup: () => ({ args }),
+  //   template: `<Typography v-bind="args"></Typography>`
+  // })
 } as Meta<typeof Typography>
 
-type Story = StoryObj
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/7.0/vue/api/csf
- * to learn how to use render functions.
- */
-export const Primary: Story = {}
-
-export const Secondary: Story = {
-  args: {
-    primary: false,
-    label: 'Button'
-  }
-}
-
-export const Large: Story = {
-  args: {
-    label: 'Button',
-    size: 'large'
-  }
-}
-
-export const Small: Story = {
-  args: {
-    label: 'Button',
-    size: 'small'
-  }
-}
+export const Default: StoryFn<typeof Typography> = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
+  components: { Typography },
+  // The story's `args` need to be mapped into the template through the `setup()` method
+  setup: () => ({ args }),
+  template: '<typography v-bind="args" />'
+})

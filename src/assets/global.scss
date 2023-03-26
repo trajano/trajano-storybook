@@ -5,8 +5,14 @@ html {
   font-size: 16px;
 }
 
-@include media('>=desktop') {
+@include media('<desktop', '>=tablet') {
   html {
     font-size: 18px;
+  }
+}
+
+@include media('>=desktop') {
+  html {
+    font-size: 21px;
   }
 }
