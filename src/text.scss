@@ -1,0 +1,77 @@
+//@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@200;300;400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$phi: 1.61803398874989484820458683;
+@function line-height($font-size) {
+  @return $font-size + min(1rem, ($font-size / $phi));
+}
+/**
+ * This mixin provides the font sizes and line height computations for the 
+ * base to the small fonts.  The small fonts need more control to make sure
+ * we acheive the target font sizes for legibility.
+ */
+@mixin font-size-line-height($font-size) {
+  font-size: $font-size;
+  line-height: line-height($font-size);
+}
+/**
+ * This mixin provides the font sizes and line height computations for the 
+ * base to the small fonts.  The small fonts need more control to make sure
+ * we acheive the target font sizes for legibility.
+ */
+@mixin small-font-size-line-height($target-font-size-px, $base-font-size-px) {
+  @include font-size-line-height(calc($target-font-size-px / $base-font-size-px * 1rem));
+}
+
+@function next-larger-font-size($font-size) {
+  //   $short-side: $font-size / $phi;
+  //   $long-side: $short-side * $phi;
+  //   @return $short-side + $long-side;
+  @return $font-size * $phi;
+}
+
+.font-sans {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.font-sans--lexend {
+  font-family: 'Lexend', sans-serif;
+}
+.font-sans--ibm-plex-sans {
+  font-family: 'IBMPlexSans', sans-serif;
+}
+.font-sans--lato {
+  font-family: 'Lato', sans-serif;
+}
+.font-sans--roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Though we can simply do the math, I opted to show the work */
+.text-base {
+  @include font-size-line-height(1rem);
+}
+/**
+ * This should rarely be used.  It's for the really tiny print that most people won't care about but we have
+ * to put in because legal.
+ */
+.text-xxs {
+  @include small-font-size-line-height(10, 16);
+}
+.text-xs {
+  @include small-font-size-line-height(12, 16);
+}
+.text-sm {
+  @include small-font-size-line-height(14, 16);
+}
+.text-lg {
+  @include font-size-line-height(next-larger-font-size(1rem));
+}
+.text-xl {
+  @include font-size-line-height(next-larger-font-size(next-larger-font-size(1rem)));
+}
+.text-xxl {
+  @include font-size-line-height(
+    next-larger-font-size(next-larger-font-size(next-larger-font-size(1rem)))
+  );
+  // a + b where a == base font  and a+b == new font size
+}
