@@ -1,5 +1,6 @@
 //@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@200;300;400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 $phi: 1.61803398874989484820458683;
 @function line-height($font-size) {
   @return $font-size + min(1rem, ($font-size / $phi));
@@ -30,6 +31,10 @@ $phi: 1.61803398874989484820458683;
 }
 
 .font-sans {
+  font-family: 'Raleway', sans-serif;
+}
+
+.font-sans--pt-sans {
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -42,8 +47,20 @@ $phi: 1.61803398874989484820458683;
 .font-sans--lato {
   font-family: 'Lato', sans-serif;
 }
+.font-sans--noto-sans {
+  font-family: 'Noto Sans', sans-serif;
+}
+.font-sans--nunito-sans {
+  font-family: 'Nunito Sans', sans-serif;
+}
+.font-sans--raleway {
+  font-family: 'Raleway', sans-serif;
+}
 .font-sans--roboto {
   font-family: 'Roboto', sans-serif;
+}
+.font-sans--source-sans-pro {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Though we can simply do the math, I opted to show the work */
