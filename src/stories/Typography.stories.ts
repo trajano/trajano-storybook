@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import Typography from './Typography.vue'
 export default {
-  title: 'Typography/Typography',
+  title: 'Design/Typography',
   component: Typography,
   args: {
     fontFamily: ''
