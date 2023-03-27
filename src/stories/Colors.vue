@@ -53,6 +53,14 @@
           (or maybe both at the bottom just to defy iOS standards). Also I don't intend to follow
           any existing conventions anyway, this is an opinionated experiment afterall.
         </li>
+        <li>
+          link. debating on this one should I have hover, visited, focused etc? I guess for general
+          consistency with the rest of the planet I would use a blue tone. But I don't think I'll
+          underline. Since it's blueish I guess this would also be "primary" or "default" action. I
+          am still going to make buttons look like buttons, I didn't like the iOS making them look
+          no better than text with a different color and relying on placement alone.
+        </li>
+        <li>danger. this would be a redish tone color indicating a dangerous operation</li>
       </ul>
     </article>
     <article class="mode--dark">
@@ -61,7 +69,7 @@
         reduce blue on the background. Anyway I am thinking of capping the power computations to 9
         and make 10 === infinity. Primarily so things line up in monospace font.
       </p>
-      <p>However when I did it to reduce the blue the color ended up looking like poop.</p>
+      <p>However when I did it to reduce the blue the color ended up looking like 💩.</p>
 
       <p>
         So rather than using the all or nothing color value I decided to use 7 which is the next
@@ -69,10 +77,10 @@
         light mode and it actually turns out better in that it's less straining on the eyes.
       </p>
       <p>
-        So overall it looks like my color choices make things look more warm and earthy. /roll eyes/
-        but for the light background color, it reminds me of the folders we had when I was a kid and
-        the dark mode background well reminds me of poop still, but a little less I guess I can say
-        it looks like soil.
+        So overall it looks like my color choices make things look more warm and earthy. 🙄 but for
+        the light background color, it reminds me of the folders we had when I was a kid and the
+        dark mode background well reminds me of poop still, but a little less I guess I can say it
+        looks like soil.
       </p>
     </article>
   </div>

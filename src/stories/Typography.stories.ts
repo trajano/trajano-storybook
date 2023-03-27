@@ -20,7 +20,7 @@ export default {
         'open-sans',
         'raleway',
         'roboto',
-        'source-code-pro'
+        'source-sans-pro'
       ]
     }
   },

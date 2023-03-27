@@ -4,8 +4,9 @@
     heights in `rem` units. Spacing is in `px` (for now until I confirm).
 
     <p>
-      I chose <span class="font-sans--raleway">Raleway</span> the default text font. I chose this
-      because it was a variable font and it had a lighter feel than the other fonts.
+      I chose <b><span class="font-sans--source-sans-pro">Source Sans Pro</span></b> the default text font.
+      I chose this because it was a variable font and it had a lighter feel than the other fonts on
+      a high DPI (i.e. 4K) display and everything was in line.
       <span v-if="fontFamily">Currently selected font is {{ fontFamily }}.</span>
     </p>
     <p>
@@ -25,6 +26,11 @@
       </li>
       <li>sans-serif base</li>
       <li>rounded strokes. Just my preference, I find it makes the font look friendlier.</li>
+      <li>
+        No shifting of text up and down due to group. Raleway shifts
+        <span class="font-sans--raleway">1234ABC</span> which is why it had lost it's default
+        position.
+      </li>
       <li>single-storey lowercase a. Just my preference, I like simpler looking text.</li>
       <li>single-storey lowercase g. Just my preference, I like simpler looking text.</li>
       <li>
@@ -63,6 +69,35 @@
 </template>
 <style scoped lang="scss">
 @import '../text.scss';
+
+.font-sans--pt-sans {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.font-sans--lexend {
+  font-family: 'Lexend', sans-serif;
+}
+.font-sans--ibm-plex-sans {
+  font-family: 'IBMPlexSans', sans-serif;
+}
+.font-sans--lato {
+  font-family: 'Lato', sans-serif;
+}
+.font-sans--noto-sans {
+  font-family: 'Noto Sans', sans-serif;
+}
+.font-sans--nunito-sans {
+  font-family: 'Nunito Sans', sans-serif;
+}
+.font-sans--raleway {
+  font-family: 'Raleway', sans-serif;
+}
+.font-sans--roboto {
+  font-family: 'Roboto', sans-serif;
+}
+.font-sans--source-sans-pro {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 </style>
 <script setup lang="ts">
 import { computed } from 'vue'
@@ -79,7 +114,7 @@ const props = withDefaults(
       | 'open-sans'
       | 'raleway'
       | 'roboto'
-      | 'source-code-pro'
+      | 'source-sans-pro'
       | ''
   }>(),
   { fontFamily: '' }

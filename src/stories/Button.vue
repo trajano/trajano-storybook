@@ -3,6 +3,9 @@
 </template>
 
 <script lang="ts" setup>
+/**
+ * A button
+ */
 import "./button.css"
 import { computed } from 'vue';
 

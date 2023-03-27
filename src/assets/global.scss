@@ -14,12 +14,11 @@ html {
 
 @include media('>=desktop') {
   html {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
-
 body {
-  .mode--light {
+  &.mode--light {
     color: black;
     background-color: rgb(
       255 * (1 - inverse-phi-pow(7)),
@@ -27,12 +26,32 @@ body {
       255 * (1 - inverse-phi-pow(5))
     );
   }
-  .mode--dark {
+  &.mode--dark {
     color: white;
     background-color: rgb(
-      255 * inverse-phi-pow(7),
-      255 * inverse-phi-pow(7),
-      255 * inverse-phi-pow(5)
+      255 * inverse-phi-pow(5),
+      255 * inverse-phi-pow(5),
+      255 * inverse-phi-pow(7)
+    );
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background-color: rgb(
+      255 * inverse-phi-pow(5),
+      255 * inverse-phi-pow(5),
+      255 * inverse-phi-pow(7)
+    );
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    color: black;
+    background-color: rgb(
+      255 * (1 - inverse-phi-pow(7)),
+      255 * (1 - inverse-phi-pow(7)),
+      255 * (1 - inverse-phi-pow(5))
     );
   }
 }
