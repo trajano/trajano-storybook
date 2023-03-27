@@ -1,12 +1,12 @@
-import { Meta } from '@storybook/blocks';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
+import { Meta } from '@storybook/blocks'
+import Code from './assets/code-brackets.svg'
+import Colors from './assets/colors.svg'
+import Comments from './assets/comments.svg'
+import Direction from './assets/direction.svg'
+import Flow from './assets/flow.svg'
+import Plugin from './assets/plugin.svg'
+import Repo from './assets/repo.svg'
+import StackAlt from './assets/stackalt.svg'
 
 <Meta title="Example/Introduction" />
 
@@ -19,48 +19,77 @@ import StackAlt from './assets/stackalt.svg';
 
 This is an opinionated component library primarily for my own website and to test out ideas.
 
+What you'd notice is a lot of _pseudo-intellectual_ reasons why I chose to do things, because honestly it's just a matter of hubris as that's what I think UI designs are, not that there's anything wrong with it. If it wasn't for that we won't get to see ideas like Neumorphism (which looks funky, but I find takes too much space), Flat (which looks weird to me still, but it's actually the best so far as it does remind me of Windows 2.0, the that's why Material lifts it up a bit I guess), Skeuomorphic which made iOS during Steve Jobs time look really nice, but at the same time expensive to render due to the quality of the icons. Then we'd have the same UI as Xerox Alto or a VT52 ASCII graphics.
+
+In all honesty, I remember using the VTs when I can as much as possible in my early years rather than the GUI stuff because it was much faster to get things done. I wonder if I can capture that feeling as well with this thought experiment.
+
+## Golden ratio everywhere
+
+I use numbers derived from the golden ratio (φ) everywhere for fun, but also because I don't like numbers that just come out of someones _expletive of choice_. If you see the [iOS font size guidelines](https://www.learnui.design/blog/ios-font-size-guidelines.html) or [Apple HIG Layout](https://developer.apple.com/design/human-interface-guidelines/foundations/layout/) or [Tailwind CSS spacing](https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale) or [Nativebase typography](https://docs.nativebase.io/default-theme#h2-typography) I would go... ok where yeah they look nice but why choose those numbers?
+
+So the general rule for the most part is unless it needs fine grained control (e.g. smaller than base font size fonts) I try to keep everything to be a function of φ.
+
+This includes, font sizes, spacing and color.
+
+Yes I read it was [debunked](https://ux.stackexchange.com/questions/2536/why-does-the-golden-ratio-work-or-does-it), and my general comment to it would be so what? It is still a nice thought experiment. For one, I do see the ratios do help with the line heights and font sizes larger than the base.
+
+## Responsiveness
+
+Default is mobile devices first and everyting else becomes exception from there.
+
+Default is light mode first and dark mode becomes exception from there. A functional component that uses pinia? would be used to drive this setting where it adds `mode--dark` to the class list of the body depending on user preference or pinia value. Technical implementation wise, there would be both `mode--dark` and `mode--light` and there is no "default" in that every color needs to be bound by either .mode--dark or .mode--light.
+
+The way I am thinking it would look like would be something like
+
+```
+.colorpart.mode--dark
+.colorpart.mode--light
+```
+
 ## Normalize vs CSS reset
 
 I opted for normalize with [normalize-css](http://necolas.github.io/normalize.css/) to offload the work of writing my own reset with something that is regularly updated.
 
-I also opted *not* to use Tailwind CSS to make it easier for me to port this later to React Native.
+I also opted _not_ to use Tailwind CSS to make it easier for me to port this later to React Native. However, I do use their class names where appropriate. Would I end up with something like Tailwind? Maybe only time will tell, for now I am limitting to pure SCSS and math rather than adding JS functions to the mix.
 
-## rem vs px 
+## rem vs px
 
-`rem`.  Even if I am used to `px` for most things at work, I decided to use `rem` as it allows me to set a **root** size that would be responsive and scale everything relative to that number.  That way I don't have to adjust the font sizes across different devices on each component, I only need to do it based on the root.
+`rem`. Even if I am used to `px` for most things at work, I decided to use `rem` as it allows me to set a **root** size that would be responsive and scale everything relative to that number. That way I don't have to adjust the font sizes across different devices on each component, I only need to do it based on the root.
 
 This differs from
-* https://matklad.github.io/2022/11/05/accessibility-px-or-rem.html
+
+- https://matklad.github.io/2022/11/05/accessibility-px-or-rem.html
 
 # Organization
 
-* Typography
-* Color ??
-* Components
-* Blocks
-* Page Blocks
-* Pages
+- Typography
+- Color ??
+- Components
+- Blocks
+- Page Blocks
+- Pages
 
 ## Typography
-This is the lowest level of the organization.  At this level I specify the font sizes, line heights in `rem` units.  Spacing is in `px` (for now until I confirm).
+
+This is the lowest level of the organization. At this level I specify the font sizes, line heights in `rem` units. Spacing is in `px` (for now until I confirm).
 
 Only the root fonts is responsive.
 
 Due to how vue works, the normalization and the root font size need to be globally defined.
 
-`<h1>..<h6>` would not be styled by tag, it needs to be explicity set with a class.  
+`<h1>..<h6>` would not be styled by tag, it needs to be explicity set with a class.
 
 I use golden ratios everywhere for fun.
 
-* https://www.learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
+- https://www.learnui.design/blog/mobile-desktop-website-font-size-guidelines.html
 
 ## Components
 
-Components - inline components. I kept the same terminology as Vuetify and Primevue.  These represent components that are `inline` or `inline-flex`.  They are ment to be usable within a body of text.
+Components - inline components. I kept the same terminology as Vuetify and Primevue. These represent components that are `inline` or `inline-flex`. They are ment to be usable within a body of text.
 
 ## Blocks
 
-These are meant to group components together and sometimes other blocks.  These are expected to take the full width of their container.
+These are meant to group components together and sometimes other blocks. These are expected to take the full width of their container.
 
 These are not meant to be responsive but may do so.
 
@@ -68,13 +97,13 @@ They're one of block, flex or grid.
 
 ## Page blocks
 
-These take up the whole width of the page.  These are meant to be responsive and **only** provide the edge padding/margins for the content.
+These take up the whole width of the page. These are meant to be responsive and **only** provide the edge padding/margins for the content.
 
-This is `block` or `flex`.  It shouldn't be `grid`.
+This is `block` or `flex`. It shouldn't be `grid`.
 
 ## Pages
 
-These define the structure of the page itself.  
+These define the structure of the page itself.
 
 Pages may contain the HTML5 structural tags such as main, nav, aside.
 
@@ -169,6 +198,5 @@ We recommend building UIs with a [**component-driven**](https://componentdriven.
 </div>
 
 <div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
-  <code>stories/Introduction.stories.mdx</code>
+  <span className="tip">Tip</span>Edit the Markdown in <code>stories/Introduction.stories.mdx</code>
 </div>

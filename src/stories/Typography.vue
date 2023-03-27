@@ -18,15 +18,20 @@
     <ul>
       <li>
         <a href="https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts"
-          >Variable font</a
+          >Variable font. Variable fonts are important when it comes to the high DPI screens,
+          without it the text would look unnatural and have disproportional thickness (you can tell
+          with <span class="font-sans--pt-sans">PT Sans</span>).</a
         >
       </li>
       <li>sans-serif base</li>
       <li>rounded strokes. Just my preference, I find it makes the font look friendlier.</li>
       <li>single-storey lowercase a. Just my preference, I like simpler looking text.</li>
       <li>single-storey lowercase g. Just my preference, I like simpler looking text.</li>
-      <li>tailed lowercase t. Having the tails makes the letters tie better together when you're glancing.</li>
-      <li>Serifed uppercase I.  This helps distinguish it from lower case l.</li>
+      <li>
+        tailed lowercase t. Having the tails makes the letters tie better together when you're
+        glancing.
+      </li>
+      <li>Serifed uppercase I. This helps distinguish it from lower case l.</li>
       <li>Serifed lower case l. This helps distinguish it from upper case I.</li>
       <li>Dotted or slashed 0. This helps distinguish it from the letter O.</li>
       <li><i>Natural italics</i></li>
