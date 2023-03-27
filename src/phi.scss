@@ -1,0 +1,11 @@
+@use 'sass:math';
+// $phi: 1.61803398874989484820458683;
+$phi: calc((1 + math.sqrt(5)) / 2);
+/**
+ * This is the inverse of the a power of phi. The powers can be
+ * used to increment between different values and be multipled to
+ * a constant or constant * (1 - inverse-phi-pow($power))
+ */
+@function inverse-phi-pow($power) {
+  @return calc(1 / math.pow($phi, $power));
+}
