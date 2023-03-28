@@ -4,7 +4,7 @@
     heights in `rem` units. Spacing is in `px` (for now until I confirm).
 
     <p>
-      I chose <b><span class="font-sans--source-sans-pro">Source Sans Pro</span></b> the default text font.
+      I chose <b><span class="font-sans--nunito-sans">Nunito Sans</span></b> the default text font.
       I chose this because it was a variable font and it had a lighter feel than the other fonts on
       a high DPI (i.e. 4K) display and everything was in line.
       <span v-if="fontFamily">Currently selected font is {{ fontFamily }}.</span>
@@ -65,6 +65,14 @@
       line heights are computed based on the golden ratio such that font-size/gap == phi but capped
       at 1rem + font-size
     </p>
+    <h2>Rankings</h2>
+    <ol>
+        <li>Nunito Sans, wins just by a hair, it has the single-storey g and slightly more default spacing making it more comfortable than...</li>
+        <li>Source Sans Pro, this just had a tighter spacing which could be good in a way since your eyes would travel less to see more content so kind of torn between that.</li>
+        <li>Raleway was actually my favorite except for that one fatal flaw where they shifted the numbers below the base line.  I really liked it in that it's legible at their default weight and their default weight looks pretty light.</li>
+        <li>Lexend I have to admit I like for the legibility, but it just feels heavy on the screen.</li>
+        <li>IBM Plex Sans, Lato, Noto Sans, Open Sans, Roboto, just didn't have serifs on the upper case I and lower case l and in the end looked too plain for me.  They may be good as an alternate header font, but I am trying to limit the number of fonts on this design to just one.</li>
+    </ol>
   </div>
 </template>
 <style scoped lang="scss">
@@ -88,6 +96,9 @@
 }
 .font-sans--nunito-sans {
   font-family: 'Nunito Sans', sans-serif;
+}
+.font-sans--open-sans {
+  font-family: 'Open Sans', sans-serif;
 }
 .font-sans--raleway {
   font-family: 'Raleway', sans-serif;
