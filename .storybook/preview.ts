@@ -16,24 +16,30 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/
       }
+    },
+    darkMode: {
+      classTarget: 'body',
+      darkClass: 'mode--dark',
+      lightClass: 'mode--light',
+      stylePreview: true
     }
   },
-  globalTypes: {
-    mode: {
-      name: 'Mode',
-      defaultValue: 'light',
-      toolbar: {
-        icon: 'circlehollow',
-        // Array of plain string values or MenuItem shape (see below)
-        items: ['light', 'dark'],
-        // Property that specifies if the name of the item will be displayed
-        showName: true,
-        // Change title based on selected value
-        dynamicTitle: true
-      }
-    }
-  },
-  decorators: [withModeClassInBody]
+  // globalTypes: {
+  //   mode: {
+  //     name: 'Mode',
+  //     defaultValue: 'light',
+  //     toolbar: {
+  //       icon: 'circlehollow',
+  //       type: 'radio',
+  //       items: [
+  //         { value: 'light', icon: 'circlehollow', title: 'Light' },
+  //         { value: 'dark', icon: 'circle', title: 'Dark' }
+  //       ],
+  //       dynamicTitle: true
+  //     }
+  //   }
+  // },
+  // decorators: [withModeClassInBody]
 }
 
 export default preview

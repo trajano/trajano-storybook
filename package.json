@@ -30,7 +30,7 @@
     "@storybook/addon-links": "^7.0.0-rc.8",
     "@storybook/blocks": "^7.0.0-rc.8",
     "@storybook/testing-library": "^0.0.14-next.1",
-    "@storybook/vue3": "^7.0.0-rc.8",
+    "@storybook/vue3": "^7.0.0-rc.10",
     "@storybook/vue3-vite": "^7.0.0-rc.8",
     "@types/jsdom": "^21.1.0",
     "@types/node": "^18.14.2",
