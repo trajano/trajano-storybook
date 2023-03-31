@@ -12,13 +12,16 @@ export default {
       control: { type: 'select' },
       options: [
         'pt-sans',
+        'comic-neue',
         'ibm-plex-sans',
         'lato',
         'lexend',
+        'montserrat',
         'noto-sans',
         'nunito-sans',
         'open-sans',
         'raleway',
+        'recursive',
         'roboto',
         'source-sans-pro'
       ]

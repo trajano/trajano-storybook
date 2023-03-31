@@ -19,15 +19,18 @@
     <ul>
       <li>
         <a href="https://fonts.google.com/knowledge/introducing_type/introducing_variable_fonts"
-          >Variable font. Variable fonts are important when it comes to the high DPI screens,
-          without it the text would look unnatural and have disproportional thickness (you can tell
-          with <span class="font-sans--pt-sans">PT Sans</span>).</a
-        >
+          >Variable font</a
+        >. Variable fonts are important when it comes to the high DPI screens, without it the text
+        would look unnatural and have disproportional thickness (you can tell with
+        <span class="font-sans--pt-sans">PT Sans</span>).
       </li>
       <li>sans-serif base</li>
-      <li>rounded strokes. Just my preference, I find it makes the font look friendlier.</li>
       <li>
-        No shifting of text up and down due to group. Raleway shifts
+        rounded terminals. Just my preference, I find it makes the font look friendlier. Like
+        <span class="font-sans--comic-neue">Comic Neue</span>.
+      </li>
+      <li>
+        No descenders or ascendres due to character group. Raleway shifts
         <span class="font-sans--raleway">1234ABC</span> which is why it had lost it's default
         position.
       </li>
@@ -38,7 +41,12 @@
         glancing.
       </li>
       <li>Serifed uppercase I. This helps distinguish it from lower case l.</li>
-      <li>Serifed lower case l. This helps distinguish it from upper case I.</li>
+      <li>Serifed or swashed lower case l. This helps distinguish it from upper case I.</li>
+      <li>
+        Serifed or swashed lower case i. This gives the letter a little more width to make it look
+        friendlier.
+      </li>
+      <li>Swashed lower case t.</li>
       <li>Dotted or slashed 0. This helps distinguish it from the letter O.</li>
       <li><i>Natural italics</i></li>
       <li><b>Natural bold</b></li>
@@ -66,20 +74,53 @@
       at 1rem + font-size
     </p>
     <h2>Rankings</h2>
+    <p>
+      To my knowledge there is no known font that would satisfy all my criteria that is not
+      monospaced. So here are the rankings with what I did see.
+    </p>
     <ol>
-        <li>Nunito Sans, wins just by a hair, it has the single-storey g and slightly more default spacing making it more comfortable than...</li>
-        <li>Source Sans Pro, this just had a tighter spacing which could be good in a way since your eyes would travel less to see more content so kind of torn between that.</li>
-        <li>Raleway was actually my favorite except for that one fatal flaw where they shifted the numbers below the base line.  I really liked it in that it's legible at their default weight and their default weight looks pretty light.</li>
-        <li>Lexend I have to admit I like for the legibility, but it just feels heavy on the screen.</li>
-        <li>IBM Plex Sans, Lato, Noto Sans, Open Sans, Roboto, just didn't have serifs on the upper case I and lower case l and in the end looked too plain for me.  They may be good as an alternate header font, but I am trying to limit the number of fonts on this design to just one.</li>
+      <li>
+        Nunito Sans, wins just by a hair, it has the single-storey g and slightly more default
+        spacing making it more comfortable than...
+      </li>
+      <li>
+        Source Sans Pro, this just had a tighter spacing which could be good in a way since your
+        eyes would travel less to see more content so kind of torn between Source Sans Pro and
+        Nunito Sans in the end.
+      </li>
+      <li>
+        Raleway was actually my favorite except for that one fatal flaw where they used decender
+        effect on their numbers thus impacting the legibility. I really liked it in that it's
+        legible at their default weight and their default weight looks pretty light.
+      </li>
+      <li>Comic Neue was my second favorite except it is not a variable font.</li>
+      <li>
+        Lexend, I have to admit I like for the legibility, but it just feels heavy on the screen.
+      </li>
+      <li>
+        IBM Plex Sans, Lato, Montserrat, Noto Sans, Open Sans, Roboto, just didn't have serifs on the upper case
+        I and lower case l and in the end looked too plain for me. They may be good as an alternate
+        header font, but I am trying to limit the number of fonts on this design to just one.
+      </li>
+      <li>Recursive had no natural italic and was just spaced too wide and the default text was heavy.</li>
     </ol>
   </div>
 </template>
 <style scoped lang="scss">
 @import '../text.scss';
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Lexend:wght@200;300;400;700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Recursive:wght@400;700&display=swap');
 
+.font-sans--montserrat {
+  font-family: Montserrat, sans-serif;  
+}
 .font-sans--pt-sans {
   font-family: 'PT Sans', sans-serif;
+}
+.font-sans--recursive {
+  font-family: 'Recursive', sans-serif;
+}
+.font-sans--comic-neue {
+  font-family: 'Comic Neue', sans-serif;
 }
 
 .font-sans--lexend {
@@ -120,10 +161,13 @@ const props = withDefaults(
       | 'ibm-plex-sans'
       | 'lato'
       | 'lexend'
+      | 'comic-neue'
+      | 'montserrat'
       | 'noto-sans'
       | 'nunito-sans'
       | 'open-sans'
       | 'raleway'
+      | 'recursive'
       | 'roboto'
       | 'source-sans-pro'
       | ''
