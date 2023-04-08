@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+    <rect x="0" y="0" width="800" height="1000" stroke="#333" stroke-width="2" fill="none"/>
+    <!-- 16:9 aspect ratio -->
+    <rect x="0" y="275" width="800" height="450" stroke="#F44336" stroke-width="2" fill="none"/>
+    <text x="20" y="295" fill="#F44336" font-size="16">16:9</text>
+    <!-- 9:16 aspect ratio -->
+    <rect x="118.75" y="0" width="562.5" height="1000" stroke="#4CAF50" stroke-width="2" fill="none"/>
+    <text x="130" y="30" fill="#4CAF50" font-size="16">9:16</text>
+    <!-- 3:2 aspect ratio -->
+    <rect x="0" y="233.33" width="800" height="533.33" stroke="#2196F3" stroke-width="2" fill="none"/>
+    <text x="20" y="253.33" fill="#2196F3" font-size="16">3:2</text>
+    <!-- 4:3 aspect ratio -->
+    <rect x="0" y="200" width="800" height="600" stroke="#E91E63" stroke-width="2" fill="none"/>
+    <text x="780" y="220" fill="#E91E63" font-size="16" text-anchor="end">4:3</text>
+    <!-- 3:4 aspect ratio -->
+    <rect x="25" y="0" width="750" height="1000" stroke="#FFC107" stroke-width="2" fill="none"/>
+    <text x="780" y="20" fill="#FFC107" font-size="16" text-anchor="end">3:4</text>
+    <!-- Circle in 16:9 rectangle -->
+    <circle cx="400" cy="500" r="225" stroke="#F44336" stroke-width="2" fill="none"/>
+</svg>
