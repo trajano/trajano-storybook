@@ -89,34 +89,33 @@
 @use 'sass:math';
 @import '../text.scss';
 @import '../color.scss';
-$background-10: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 10))));
+$background-10: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 10))));
 $background-9: rgb(
-  255 * (1 - 1/ (math.pow($phi, 7))),
-  255 * (1 - 1/ (math.pow($phi, 7))),
-  255 * (1 - 1/ (math.pow($phi, 9)))
+  255 * (1 - math.div(1, math.pow($phi, 7))),
+  255 * (1 - math.div(1, math.pow($phi, 7))),
+  255 * (1 - math.div(1, math.pow($phi, 9)))
 );
-$background-8: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 8))));
-$background-7: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 7))));
-$background-6: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 6))));
+$background-8: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 8))));
+$background-7: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 7))));
+$background-6: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 6))));
 $background-5: rgb(
-  255 * (1 - 1/ (math.pow($phi, 7))),
-  255 * (1 - 1/ (math.pow($phi, 7))),
-  255 * (1 - 1/ (math.pow($phi, 5)))
+  255 * (1 - math.div(1, math.pow($phi, 7))),
+  255 * (1 - math.div(1, math.pow($phi, 7))),
+  255 * (1 - math.div(1, math.pow($phi, 5)))
 );
-$background-4: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 4))));
-$background-3: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 3))));
-$background-2: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 2))));
-$background-1: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 1))));
-$background-0: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 0))));
-$background--1: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -1))));
-$background--2: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -2))));
-$background--3: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -3))));
-$background--4: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -4))));
-$background--5: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -5))));
-$background--6: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -6))));
-$background--7: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -7))));
-$background--8: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -8))));
-$background--9: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, -9))));
+$background-4: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 4))));
+$background-3: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 3))));
+$background-2: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 2))));
+$background-1: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 1))));
+$background-0: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, 0))));
+$background--1: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -1))));
+$background--2: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -2))));
+$background--3: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -3))));
+$background--4: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -4))));
+$background--5: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -5))));
+$background--6: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -6))));
+$background--7: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -7))));
+$background--8: rgb(255 * 1, 255 * 1, 255 * (1 - math.div(1, math.pow($phi, -8))));
 article {
   //background-color: rgb(255 * 1, 255 * 1, 255 * (1 - 1/ (math.pow($phi, 5))));
   background-color: $background-5;
@@ -184,8 +183,8 @@ article {
 }
 .mode--dark {
   color: white;
-  $x: (1 / ($phi * $phi * $phi * $phi * $phi));
-  $y: (1 / ($phi * $phi * $phi * $phi * $phi * $phi * $phi));
+  $x: math.div(1, ($phi * $phi * $phi * $phi * $phi));
+  $y: math.div(1, ($phi * $phi * $phi * $phi * $phi * $phi * $phi));
   background-color: rgb(255 * $x, 255 * $x, 255 * $y);
 }
 </style>
